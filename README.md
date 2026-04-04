@@ -4,6 +4,10 @@ Disciplina: Computação Gráfica (01/2026)
 Professor: PAULO RICARDO MUNIZ BARROS  
 Integrantes: ARTHUR DE MELLO, YURI ELLWANGER
 
+## Etapa 1 – Leitura guiada e diagrama
+
+...
+
 ## Etapa 2 – Explanação do fluxo de atualização
 
 - ...
