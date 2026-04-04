@@ -1,40 +1,41 @@
-// An array of 4 planet objects
-Planet[] planets = new Planet[3];
+// Um vetor de três objetos de Planeta
+Planeta[] planetas = new Planeta[3];
 
 void setup() {
   size(480, 480);
   
-  // Getting the number that decides which one of the planets will have twin moons
-  int lucky_number = int(random(planets.length));
-
-  // The planet objects are initialized using the counter variable
-  for (int i = 0; i < planets.length; i++ ) {
-    // Getting a random color
+  // Gerar o número que decide qual dos planetas terá duas luas
+  int numero_sorte = int(random(planetas.length));
+  
+  // Inicializar os planetas usando uma variável contadora
+  for (int i = 0; i < planetas.length; i++) {
+    // Gerar uma cor aleatória
     float r = random(256);
     float g = random(256);
     float b = random(256);
     
-    if (i == lucky_number)
-      planets[i] = new Planet(60 + i*36, 24, true, color(r, g, b));
-    else
-      planets[i] = new Planet(60 + i*36, 24, false, color(r, g, b));
+    if (i == numero_sorte)
+      // Criar planeta com duas luas           v  v
+      planetas[i] = new Planeta(60 + i*36, 24, true, color(r, g, b));
+    else 
+      planetas[i] = new Planeta(60 + i*36, 24, false, color(r, g, b));
   }
 }
 
 void draw() {
-  background(255); //<>//
+  background(255);
 
-  // Drawing the Sun
+  // Desenhar o sol
   pushMatrix();
   translate(width/2, height/2);
-  stroke(0); //<>//
+  stroke(0);
   fill(255);
   ellipse(0, 0, 64, 64);
 
-  // Drawing all Planets
-  for (int i = 0; i < planets.length; i++ ) {
-    planets[i].update();
-    planets[i].display();
+  // Desenhar os planetas
+  for (int i = 0; i < planetas.length; i++) {
+    planetas[i].update();
+    planetas[i].display();
   }
   popMatrix();
 }
